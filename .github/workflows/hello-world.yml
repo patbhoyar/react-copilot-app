@@ -1,8 +1,10 @@
 name: Hello World
 
 on:
-  # push:
-  #   branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+    paths-ignore: 
+      - '.github/workflows/*'
   workflow_dispatch:
 
 jobs:
