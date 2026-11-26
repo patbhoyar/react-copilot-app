@@ -1,4 +1,4 @@
-name: Test Project
+name: Deploy Project
 on: push
 jobs:
   test:
@@ -14,6 +14,7 @@ jobs:
       - name: Run tests
         run: npm test
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,8 +24,6 @@ jobs:
           node-version: '24'
       - name: Install dependencies
         run: npm install
-      - name: Run tests
-        run: npm test
       - name: Build app
         run: npm run build
       - name: Deploy 
