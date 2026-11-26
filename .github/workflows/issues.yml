@@ -1,0 +1,10 @@
+name: Issue Display
+on: issues
+jobs:
+  display:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Issue Details
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
