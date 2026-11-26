@@ -7,7 +7,7 @@ describe("App Component", () => {
 
     const heading = screen.getByRole("heading", { name: /Hello Docker!!!!/ });
     expect(heading).toBeTruthy();
-    expect(heading.textContent).toBe("Hello Docker!!!");
+    expect(heading.textContent).toBe("Hello Docker!!!!");
   });
 
   it("should render the text in an h1 element", () => {
@@ -15,6 +15,6 @@ describe("App Component", () => {
 
     const heading = screen.getByRole("heading", { level: 1 });
     expect(heading).toBeTruthy();
-    expect(heading.textContent).toBe("Hello Docker!!!");
+    expect(heading.textContent).toBe("Hello Docker!!!!");
   });
 });
