@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: node:24
     outputs:
       script-file: ${{ steps.publish.outputs.script-file }}
     steps:
