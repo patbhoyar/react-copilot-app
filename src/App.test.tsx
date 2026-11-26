@@ -5,7 +5,7 @@ describe("App Component", () => {
   it('should display "Hello Docker!!!"', () => {
     render(<App />);
 
-    const heading = screen.getByRole("heading", { name: /Hello Docker!!!/ });
+    const heading = screen.getByRole("heading", { name: /Hello Docker!!!!/ });
     expect(heading).toBeTruthy();
     expect(heading.textContent).toBe("Hello Docker!!!");
   });
