@@ -7,7 +7,7 @@ type HomePageProps = {
 export function HomePage({ onPortfolioClick }: HomePageProps) {
   return (
     <section className="hero">
-      <p className="eyebrow">WELCOME Fraandz</p>
+      <p className="eyebrow">WELCOME Fraandz!</p>
       <h1 className="huge-text">Hello World!!!!</h1>
       <p className="hero-description">
         A little corner of the web to share who I am and what I make.
