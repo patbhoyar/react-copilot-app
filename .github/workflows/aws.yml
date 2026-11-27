@@ -1,0 +1,57 @@
+name: Deploy to AWS S3
+
+on:
+  push:
+    branches:
+      - aws-s3
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:24
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm install
+      - name: Build app
+        run: npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist    
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '24'
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v8
+        with:
+          name: dist
