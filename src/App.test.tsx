@@ -13,10 +13,10 @@ describe("App Component", () => {
     render(<App />);
 
     const heading = screen.getByRole("heading", {
-      name: "Test App - test!!!!",
+      name: "Test App -- test!!!!",
     });
     expect(heading).toBeTruthy();
-    expect(heading.textContent).toBe("Test App - test!!!!");
+    expect(heading.textContent).toBe("Test App -- test!!!!");
   });
 
   it("should render the text in an h1 element", () => {
@@ -24,7 +24,7 @@ describe("App Component", () => {
 
     const heading = screen.getByRole("heading", { level: 1 });
     expect(heading).toBeTruthy();
-    expect(heading.textContent).toBe("Test App - test!!!!");
+    expect(heading.textContent).toBe("Test App -- test!!!!");
   });
 
   it("should navigate between the about, profile, and portfolio routes", () => {
