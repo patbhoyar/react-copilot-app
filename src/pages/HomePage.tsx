@@ -10,7 +10,7 @@ export function HomePage({ onPortfolioClick }: HomePageProps) {
     <section className="hero">
       <p className="eyebrow">WELCOME Fraandz!</p>
       <h1 className="huge-text">
-        {config.appName} - {config.environment}!!!!
+        {config.appName} -- {config.environment}!!!!
       </h1>
       <p className="hero-description">
         A little corner of the web to share who I am and what I make.
