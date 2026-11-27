@@ -1,0 +1,19 @@
+name: Deploy to AWS S3
+on:
+  push:
+    branches:
+      - aws-oidc
+permissions:
+  id-token: write
+jobs:
+  run_job_with_aws:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v6.3.1
+        with:
+          role-to-assume: ${{ secrets.S3_IAM_ROLE }}
+          aws-region: ap-south-1
+      - name: Additional steps
+        run: aws sts get-caller-identity
+          
