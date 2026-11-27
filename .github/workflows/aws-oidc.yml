@@ -2,7 +2,7 @@ name: Deploy to AWS S3
 on:
   push:
     branches:
-      - aws-oidc
+      - aws-s3
 permissions:
   contents: read
 jobs:
