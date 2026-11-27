@@ -7,13 +7,9 @@ export function App() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a
-          className="brand"
-          href="/"
-          onClick={(event) => navigate(event, "/")}
-        >
+        <a className="brand" href="/" onClick={(event) => navigate(event, "/")}>
           <span className="brand-mark">P</span>
-          <span>Personal space</span>
+          <span>My Personal space</span>
         </a>
         <nav aria-label="Main navigation" className="main-nav">
           {routes.map(({ path, label }) => (
