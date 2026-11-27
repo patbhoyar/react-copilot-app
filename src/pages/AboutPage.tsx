@@ -8,7 +8,7 @@ export function AboutPage() {
         welcoming experiences.
       </p>
       <div className="info-card">
-        <h2>What I care about</h2>
+        <h2>What I reallycare about</h2>
         <p>
           Clear design, learning something new every day, and making technology
           feel a little more human.
